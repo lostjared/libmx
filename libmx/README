@@ -1,0 +1,260 @@
+|--=]QQQQQQQQQQQQQQQQQQQVTQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+Q. ]QQQQQQQQQQQQQQQQQQQQ. mQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+Q. ]QQQQQQV??9QQQ@T??9QT` ?TQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+Q. ]QQQQQ( jw "Q@`_gg,dw  awQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+Q. ]QQQQF .QQ; ]k +$QgmQ. mQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+Q. ]QQQQ[ :QQ; ]m   -?QQ. mQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+Q. ]QQQW[ :QQ; ]Wgs.  3Q. mQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+Q. ]QQQ:h  QQ` jE4WQ; jQ. m@$WQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+!  -""":QL.?! jQk ??`_QQc ?'dQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+QmQQQQmQQQQwwmQWQmgygQQQQgwmQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+QQQQQQQQQQQQQQQQQQ!.aa,-4QB  dQQQQQc )WQQQQQQQQWQQQWQQQWQQQWQQ
+QQQQQQQQQQQQQQQQQF jWWQ/jQQa<QQQQQQf )WQQQQQQQQQQQQQQQQQQQQQQQ
+QQQQQQQQQQQQQQQQQf )WQQmmQ???$QW!-"t )WQ@?"!4QQQQQQQQQQQQQQQQQ
+QQQQQQQQQQQQQQQQQL   "Y$QQm; dQ[ <g, )W@`.mc ]QQQQQQQQQQQQQQQQ
+QQQQQQQQQQQQQQQQQQ,     4QQ; dW  jQL )W[ =Qk -QQQQQQQQQQQQQQQQ
+QQQQQQQQQQQQQQQQQQQma,  =QQ; dW  3Qk )W[ -""  WWQQQQQQWQQQWQQQ
+QQQQQQQQQQQQQQQQQ@4QQQm .QQ; dQ  3Qf )W[ =QQQWWQQQQQQQQQQQQQQQ
+QQQQQQQQQQQQQQQQWk-QWQW <QQ; dQc ]Q[ )Wk -QWE:QQQQQQQQQQQQQQQQ
+QQQQQQQQQQQQQQQQQm,-!!`_mQc__|QQ,_=c__]Qa "!=yQQQQQQQQQQQQQQQQ
+QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQW""!QQQQQQQQQQQQQQQQQQQQW"""Q
+QQQQQQQQQQQQQQQQQWQQQQQQQQQQQQQQQQE .QQQQQQQQQQQQQQQQQQQQQm  Q
+QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQE :QQQQQQQQQQQQQQQQQQQWQW  Q
+QQQQQQQQQQQQQQQQQQQQQQQQWQQQQQW"  ! :QQ@!^^?QW@"++"4QQQ!  ?  Q
+QQQQQQQQQQQQQQQQWQQQQQQQQQQQQQ[ =Qc .QW' mk )WE<QQ; $Qf _QL  Q
+QQQQQQQQQQQQQQQQQQQQQQQWQQQQQQ` ]Qk :QF .Qm  $WWBH[ ]Q' ]Wm  Q
+QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ. jQE :Qf  |+..dD`.a, ]Q; ]WW  Q
+QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ; ]QE .QL  QQQQQ[ jW[ ]Q( ]WB  Q
+QQQQQQQQQQQQQQQQQQQQQWQQQQQQQQL +W[ :QQ. $Q@.Q[ ]B' ]Qk -Wf  Q
+QQQQQQQQQQQQQQQQWQQQQQQQQQQQQQQa,_w_a<Qg,-"<yQm, _c_=jQw,_w_a_
+[                                                            ]
+[                                                            ]
+[                                                            ]
+[   MX Library + Examples (code name haze)                   ]
+[                                                            ]
+[   svn co svn://lostsidedead.com/haze                       ]
+[                                                            ]
+[   http://lostsidedead.com/mx (offical page)                ]
+[____________________________________________________________] 
+
+
+
+
+To compile : 
+
+*1.1 update on 1/14/10*
+
+now works with SDL-1.12.14 and now is 64 bit on OS X
+works best with MacPorts, install autotools, libpng, and libjpeg
+and configure with
+
+./configure --prefix=/opt/local
+
+
+you can find macports @ http://macports.org
+
+old info:
+
+
+check out source code or download a tarball from the SVN
+extract it and cd to the directory
+
+NOTE:   If you have SDL_stretch installed
+it would be compiled into  libmx automaticly
+dont panic if you do not have it installed
+the library will work fine without it, just no
+fast bliting and resizing of surfaces, it will use
+a slower algorithm instead. (note: if you want to compile this for MasterX, 
+SDL_stretch is required)
+
+a note about threads:
+
+the default thread's this library uses are the ones compiled in
+when you compiled SDL, I recommend using pthread's if available
+on your platform or if you do not need to cross compile to windows.
+
+Note about OpenGL support for OpenGL is now available
+
+$ ./autogen.sh && ./configure && make
+
+to compile just MX to compile the examples add --enable-tests 
+to configure as a argument example:
+
+$ ./autogen.sh && ./configure --enable-tests && make
+
+also to enable TTF fonts use --enable-ttf
+
+If you have all the nessicary dependencys and librarys it
+will compile fine. (libsdl, libjpeg, libpng, libfreetype, sdlttf, sdlstretch)
+
+Configure Arguments:
+
+--enable-tests  	enables compilation of examples
+--enable-subtext        enables sublminal messages in haze
+
+
+* note:
+
+	if you complied libpng or libz to a different 
+directory other then /usr/include and /usr/lib you will have to 
+give the configure script the path with the prefix directory.
+Example
+
+$ ./autogen.sh && ./configure --prefix=/usr/local && make
+
+If you wish to use the applications outside of the build
+directory, or wish to use the mx library on your own
+applications, simply cd to the mx directory and install.
+(if on linux ethier sudo or login as root)
+
+$ cd mx &&  make install
+
+A Example cross compiling with a i586 build of the mingw32 compiler:
+
+$ ./configure --prefix=/usr/local/i586-mingw32 \ 
+--host=i586-mingw32msvc --target=i586-mingw32msvc --disable-shared
+
+note: 
+when cross compiling to windows disable shared and use as static library 
+
+$ make
+
+Or if you have the IBM Cell SDK installed on Ubuntu you can cross compile
+to the PS3 with examples just as easy with:
+
+$ ./autogen.sh && patch -p0 < ppu-add.patch && ./configure \
+--prefix=/usr/lib/cell/sysroot/usr --target=ppu --host=ppu \
+--enable-tests --enable-subtext  && make
+
+A Note about mx::mxException
+
+/**********************************************************************/
+#include<mx/mx.h>
+
+/* to use  mxException template simply define a exception type
+	than define a overloaded operator << to explain that specific exception
+	you can use variables inside of the type, passed by the throw's mxException constructor
+ */
+class Err {};
+
+std::ostream &operator<<(std::ostream &out, const Err &e) {
+	out << "Error Exception";
+	return out;
+}
+
+int main(int argc, char **argv) {
+
+	try {
+		/* than throw the exception */
+		throw mx::mxException<Err>(Err());		
+	} 
+	/* catch a certain type */
+	catch(mx::mxException<Err> &e) {
+		e.printError(std::cerr); /* use overloaded << operator to output */
+	}
+	/* catch a different type */
+	catch( mx::mxException<std::string> &e ) {
+		e.printError(std::cerr);  /* use  std::string's << operator to output diagnostic messages */ 		
+	}
+	catch( std::exception &e ) {
+		std::cerr << e.what() << "\n";
+	}
+	catch ( ... ) {
+		std::cerr << "unknown exception\n";
+	}
+	return EXIT_FAILURE;
+}
+/************************************************************************/
+
+Info on MX Static/Shared Library:
+
+	A collection of source code to deal with Surfaces, compression
+fonts, joysticks, threads, timers, screens, vectors for SDL and other 
+related tasks. MX now includes a 3D math library which provides
+very basic 3d math operations. A example using these classes, is 
+found in the mathtest directory.
+
+MX depends on:
+
+libc
+libstdc++
+libpng
+zlib
+SDL
+
+supported version of SDL is 1.2.13 download it @ libsdl.org
+or use this command:
+
+$ wget http://libsdl.org/release/SDL-1.2.13.tar.gz
+
+simply:
+extract, bootstrap, configure, compile, install.
+
+
+How to compile a MX Program:
+
+$ g++ main.cpp -o program `pkg-config sdl mx --cflags --libs` 
+
+
+information on Examples
+
+
+Info on Tricolor:
+
+	Stare at it and it will make you 
+hallicunate press the enter key to speed it up.
+press space to take a screen shot.
+Only for x86 linux and win32, since it uses
+gnu x86 assembly.
+
+
+Info on Triheart:
+
+	Just some random nonsense I typed to pass the time,
+it has a hidden meaning deeper than what it actually does
+read in between the code. heh its just some nonsense
+
+Info on mathtest:
+
+	a simple 3D walk with space ships (adapted from
+the book Trick's of the 3D game programming guru's).
+Demonstrates the 3D math operations in a completly
+object oriented enviorment.
+
+Info on mxmp:
+
+	A Full Demo, single / multiplayer puzzle game
+similar to tetris and acid drop. It has some quircks tho
+witch kind of make the gameplay like falling blocks, and
+floaters. Supports 2 Players via TCP/IP connection.
+Application takes the following paramters:
+
+--width=width
+--height=height
+set the applications width and height, the drawing surface 
+will be stretched to fit the front surface.
+
+
+--full=true
+full screen mode is enabled
+
+
+Info on et_test:
+
+	Eternal class template for creating a map of 
+variables of any type. That will auto-save to the disk on
+exit and reload on start of the application. The directory 
+contains examples using mx::mxEternal
+
+Info on socket_test:
+
+	A few programs for testing mxSocket, a very primative
+socket class. Listen, and connection mode, as well as readall
+and writeall functions.
+
+Info on mxwnd_test:
+	a collection of demo programs using libmx.
+
+
+
+for more information visit: www.lostsidedead.com
