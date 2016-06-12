@@ -93,7 +93,8 @@ am_current_OBJECTS = main.$(OBJEXT) main_window.$(OBJEXT) \
 	current_game.$(OBJEXT) game_screen.$(OBJEXT) \
 	game_controller.$(OBJEXT)
 current_OBJECTS = $(am_current_OBJECTS)
-current_LDADD = $(LDADD)
+am__DEPENDENCIES_1 =
+current_DEPENDENCIES = $(am__DEPENDENCIES_1)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -237,8 +238,8 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 AM_CXXFLAGS = -Wall -pedantic -O2 $(MX_CFLAGS) -std=c++98
-AM_LDFLAGS = $(MX_LDFLAGS) -lpng 
 current_SOURCES = main.cc main_window.cc current_game.cc game_screen.cc game_controller.cc 
+current_LDADD = $(MX_LDFLAGS) -lpng
 all: all-am
 
 .SUFFIXES:
