@@ -1,7 +1,7 @@
 #include<mx.h>
 #include<string>
 #include<iostream>
-
+#include<cassert>
 
 class mxX : public mx::mxWnd {
 	mx::mxImage img;

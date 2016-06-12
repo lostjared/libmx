@@ -15365,7 +15365,7 @@ fi
 
 
 if test x$enable_mxtest = xyes; then
-        SUBDIRS_ENABLED="mx triheart mathtest mxmp tricolor et_test socket_test mxwnd_test OpenGL_examples"
+        SUBDIRS_ENABLED="mx  mathtest mxmp socket_test mxwnd_test OpenGL_examples"
 else
 	SUBDIRS_ENABLED="mx"
 fi
@@ -15524,7 +15524,7 @@ echo "current target is ${target} "
 
 
 
-ac_config_files="$ac_config_files Makefile mx/Makefile mx.pc tricolor/Makefile triheart/Makefile mxmp/Makefile mathtest/Makefile et_test/Makefile socket_test/Makefile mxwnd_test/Makefile OpenGL_examples/Makefile"
+ac_config_files="$ac_config_files Makefile mx/Makefile mx.pc mxmp/Makefile mathtest/Makefile socket_test/Makefile mxwnd_test/Makefile OpenGL_examples/Makefile"
 
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
@@ -16640,11 +16640,8 @@ do
     "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
     "mx/Makefile") CONFIG_FILES="$CONFIG_FILES mx/Makefile" ;;
     "mx.pc") CONFIG_FILES="$CONFIG_FILES mx.pc" ;;
-    "tricolor/Makefile") CONFIG_FILES="$CONFIG_FILES tricolor/Makefile" ;;
-    "triheart/Makefile") CONFIG_FILES="$CONFIG_FILES triheart/Makefile" ;;
     "mxmp/Makefile") CONFIG_FILES="$CONFIG_FILES mxmp/Makefile" ;;
     "mathtest/Makefile") CONFIG_FILES="$CONFIG_FILES mathtest/Makefile" ;;
-    "et_test/Makefile") CONFIG_FILES="$CONFIG_FILES et_test/Makefile" ;;
     "socket_test/Makefile") CONFIG_FILES="$CONFIG_FILES socket_test/Makefile" ;;
     "mxwnd_test/Makefile") CONFIG_FILES="$CONFIG_FILES mxwnd_test/Makefile" ;;
     "OpenGL_examples/Makefile") CONFIG_FILES="$CONFIG_FILES OpenGL_examples/Makefile" ;;

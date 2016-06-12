@@ -96,7 +96,7 @@ AC_ARG_ENABLE(tests,
 [   --enable-tests              Enable  tests of MX library ],enable_mxtest=yes)
 
 if test x$enable_mxtest = xyes; then
-        SUBDIRS_ENABLED="mx triheart mathtest mxmp tricolor et_test socket_test mxwnd_test OpenGL_examples"
+        SUBDIRS_ENABLED="mx  mathtest mxmp socket_test mxwnd_test OpenGL_examples"
 else
 	SUBDIRS_ENABLED="mx"
 fi
@@ -218,6 +218,6 @@ AC_SUBST(SUBDIRS_ENABLED)
 AC_SUBST(WINPLAT)
 AC_SUBST(TTF_LINK)
 
-AC_OUTPUT(Makefile mx/Makefile mx.pc tricolor/Makefile triheart/Makefile mxmp/Makefile mathtest/Makefile et_test/Makefile  socket_test/Makefile mxwnd_test/Makefile OpenGL_examples/Makefile)
+AC_OUTPUT(Makefile mx/Makefile mx.pc mxmp/Makefile mathtest/Makefile  socket_test/Makefile mxwnd_test/Makefile OpenGL_examples/Makefile)
 
 
