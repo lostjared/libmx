@@ -1,3 +1,0 @@
-libmx_la-mxttf.lo: mxttf.cpp ../config.h
-
-../config.h:
