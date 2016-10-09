@@ -88,6 +88,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
+target_triplet = @target@
 bin_PROGRAMS = triangle$(EXEEXT) rot$(EXEEXT) light$(EXEEXT) \
 	rect$(EXEEXT)
 subdir = OpenGL_examples
@@ -315,7 +316,11 @@ srcdir = @srcdir@
 stretchInclude = @stretchInclude@
 stretchLink = @stretchLink@
 sysconfdir = @sysconfdir@
+target = @target@
 target_alias = @target_alias@
+target_cpu = @target_cpu@
+target_os = @target_os@
+target_vendor = @target_vendor@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
@@ -323,8 +328,8 @@ triangle_SOURCES = tri.cpp
 light_SOURCES = light.cpp
 rot_SOURCES = rot.cpp
 rect_SOURCES = rect.cpp
-AM_CPPFLAGS = -Wall -pedantic $(CFLAGPREFIX)  $(LIBSDL_CFLAGS) $(all_includes) -I../mx
-AM_LDFLAGS = $(LIBSDL_RPATH) $(LIBSDL_LIBS) $(LDPREFIX) -L../mx -lmx -lpng  -lz
+AM_CPPFLAGS = $(CFLAGPREFIX)  $(LIBSDL_CFLAGS) $(all_includes) -I../mx
+AM_LDFLAGS = $(LIBSDL_RPATH) $(LIBSDL_LIBS) $(LDPREFIX) -L../mx -lmx -lpng  -lz $(PLATFORMZ)
 all: all-am
 
 .SUFFIXES:

@@ -2,6 +2,7 @@
 AC_PREREQ([2.64])
 AC_INIT(libmx, 1.1, jared@lostsidedead.biz)
 AC_CONFIG_HEADERS(config.h)
+AC_CANONICAL_SYSTEM
 AM_INIT_AUTOMAKE(libmx, 1.1)
 AM_PROG_AS
 AC_LANG_CPLUSPLUS
@@ -9,7 +10,6 @@ AC_PROG_CXX
 AC_PROG_LIBTOOL
 AC_PROG_LN_S
 AC_PROG_MAKE_SET
-
 dnl KDE_FIND_PATH(programm-name, variable-name, list of directories,
 dnl     if-not-found, test-parameter)
 AC_DEFUN(KDE_FIND_PATH,
@@ -96,7 +96,7 @@ AC_ARG_ENABLE(tests,
 [   --enable-tests              Enable  tests of MX library ],enable_mxtest=yes)
 
 if test x$enable_mxtest = xyes; then
-        SUBDIRS_ENABLED="mx  mathtest mxmp socket_test mxwnd_test OpenGL_examples"
+        SUBDIRS_ENABLED="mx mxmp"
 else
 	SUBDIRS_ENABLED="mx"
 fi
@@ -218,6 +218,6 @@ AC_SUBST(SUBDIRS_ENABLED)
 AC_SUBST(WINPLAT)
 AC_SUBST(TTF_LINK)
 
-AC_OUTPUT(Makefile mx/Makefile mx.pc mxmp/Makefile mathtest/Makefile  socket_test/Makefile mxwnd_test/Makefile OpenGL_examples/Makefile)
+AC_OUTPUT(Makefile mx/Makefile mx.pc mxmp/Makefile)
 
 

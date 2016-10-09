@@ -88,6 +88,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
+target_triplet = @target@
 bin_PROGRAMS = mxwnd_test$(EXEEXT) surface_test$(EXEEXT) \
 	subclass_test$(EXEEXT) resize$(EXEEXT) jpgTest$(EXEEXT)
 subdir = mxwnd_test
@@ -104,23 +105,31 @@ am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am_jpgTest_OBJECTS = jpgTest.$(OBJEXT)
 jpgTest_OBJECTS = $(am_jpgTest_OBJECTS)
-jpgTest_LDADD = $(LDADD)
+am__DEPENDENCIES_1 =
+jpgTest_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
 am__v_lt_1 = 
 am_mxwnd_test_OBJECTS = mxwnd_test.$(OBJEXT)
 mxwnd_test_OBJECTS = $(am_mxwnd_test_OBJECTS)
-mxwnd_test_LDADD = $(LDADD)
+mxwnd_test_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 am_resize_OBJECTS = resize.$(OBJEXT)
 resize_OBJECTS = $(am_resize_OBJECTS)
-resize_LDADD = $(LDADD)
+resize_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 am_subclass_test_OBJECTS = subclass_test.$(OBJEXT)
 subclass_test_OBJECTS = $(am_subclass_test_OBJECTS)
-subclass_test_LDADD = $(LDADD)
+subclass_test_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1)
 am_surface_test_OBJECTS = surface_test.$(OBJEXT)
 surface_test_OBJECTS = $(am_surface_test_OBJECTS)
-surface_test_LDADD = $(LDADD)
+surface_test_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -319,7 +328,11 @@ srcdir = @srcdir@
 stretchInclude = @stretchInclude@
 stretchLink = @stretchLink@
 sysconfdir = @sysconfdir@
+target = @target@
 target_alias = @target_alias@
+target_cpu = @target_cpu@
+target_os = @target_os@
+target_vendor = @target_vendor@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
@@ -328,8 +341,13 @@ surface_test_SOURCES = surface_test.cpp
 subclass_test_SOURCES = subclass_test.cpp
 resize_SOURCES = resize.cpp
 jpgTest_SOURCES = jpgTest.cpp
-AM_CPPFLAGS = -Wall -pedantic $(CFLAGPREFIX)  $(LIBSDL_CFLAGS) $(all_includes) -I../mx
-AM_LDFLAGS = $(LIBSDL_RPATH) $(LIBSDL_LIBS) $(LDPREFIX) -L../mx -lmx -lpng -ljpeg  -lz
+mxwnd_test_LDADD = $(LIBSDL_RPATH) $(LIBSDL_LIBS) $(LDPREFIX) -L../mx -lmx -lpng  -lz $(PLATFORMZ)
+surface_test_LDADD = $(LIBSDL_RPATH) $(LIBSDL_LIBS) $(LDPREFIX) -L../mx -lmx -lpng  -lz $(PLATFORMZ)
+subclass_test_LDADD = $(LIBSDL_RPATH) $(LIBSDL_LIBS) $(LDPREFIX) -L../mx -lmx -lpng  -lz $(PLATFORMZ)
+resize_LDADD = $(LIBSDL_RPATH) $(LIBSDL_LIBS) $(LDPREFIX) -L../mx -lmx -lpng  -lz $(PLATFORMZ)
+jpgTest_LDADD = $(LIBSDL_RPATH) $(LIBSDL_LIBS) $(LDPREFIX) -L../mx -lmx -lpng  -lz $(PLATFORMZ)
+AM_CPPFLAGS = $(CFLAGPREFIX)  $(LIBSDL_CFLAGS) $(all_includes) -I../mx
+AM_LDFLAGS = $(LIBSDL_RPATH) $(LDPREFIX) #-L../mx -lmx -lpng -ljpeg  -lz $(PLATFORMZ)
 all: all-am
 
 .SUFFIXES:

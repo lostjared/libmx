@@ -7,7 +7,12 @@ subclass_test_SOURCES=subclass_test.cpp
 resize_SOURCES=resize.cpp
 jpgTest_SOURCES=jpgTest.cpp
 
+mxwnd_test_LDADD=  $(LIBSDL_RPATH) $(LIBSDL_LIBS) $(LDPREFIX) -L../mx -lmx -lpng  -lz $(PLATFORMZ)
+surface_test_LDADD=  $(LIBSDL_RPATH) $(LIBSDL_LIBS) $(LDPREFIX) -L../mx -lmx -lpng  -lz $(PLATFORMZ)
+subclass_test_LDADD=  $(LIBSDL_RPATH) $(LIBSDL_LIBS) $(LDPREFIX) -L../mx -lmx -lpng  -lz $(PLATFORMZ)
+resize_LDADD= $(LIBSDL_RPATH) $(LIBSDL_LIBS) $(LDPREFIX) -L../mx -lmx -lpng  -lz $(PLATFORMZ)
+jpgTest_LDADD  = $(LIBSDL_RPATH) $(LIBSDL_LIBS) $(LDPREFIX) -L../mx -lmx -lpng  -lz $(PLATFORMZ)
 
-AM_CPPFLAGS = -Wall -pedantic $(CFLAGPREFIX)  $(LIBSDL_CFLAGS) $(all_includes) -I../mx
-AM_LDFLAGS = $(LIBSDL_RPATH) $(LIBSDL_LIBS) $(LDPREFIX) -L../mx -lmx -lpng -ljpeg  -lz
+AM_CPPFLAGS = $(CFLAGPREFIX)  $(LIBSDL_CFLAGS) $(all_includes) -I../mx
+AM_LDFLAGS = $(LIBSDL_RPATH) $(LDPREFIX) #-L../mx -lmx -lpng -ljpeg  -lz $(PLATFORMZ)
  

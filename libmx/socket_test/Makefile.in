@@ -88,6 +88,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
+target_triplet = @target@
 bin_PROGRAMS = test1$(EXEEXT) test2$(EXEEXT) sendcmd$(EXEEXT)
 subdir = socket_test
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -110,10 +111,13 @@ am__v_lt_0 = --silent
 am__v_lt_1 = 
 am_test1_OBJECTS = test1.$(OBJEXT)
 test1_OBJECTS = $(am_test1_OBJECTS)
-test1_LDADD = $(LDADD)
+am__DEPENDENCIES_1 =
+test1_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 am_test2_OBJECTS = test2.$(OBJEXT)
 test2_OBJECTS = $(am_test2_OBJECTS)
-test2_LDADD = $(LDADD)
+test2_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -309,15 +313,20 @@ srcdir = @srcdir@
 stretchInclude = @stretchInclude@
 stretchLink = @stretchLink@
 sysconfdir = @sysconfdir@
+target = @target@
 target_alias = @target_alias@
+target_cpu = @target_cpu@
+target_os = @target_os@
+target_vendor = @target_vendor@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 test1_SOURCES = test1.cpp
 test2_SOURCES = test2.cpp
 sendcmd_SOURCES = sendcmd.cpp
-AM_CPPFLAGS = -Wall -pedantic $(CFLAGPREFIX)  $(LIBSDL_CFLAGS) $(all_includes) -I../mx
-AM_LDFLAGS = $(LIBSDL_RPATH) $(LIBSDL_LIBS) $(LDPREFIX) -L../mx -lmx -lpng  -lz
+test1_LDADD = $(LIBSDL_RPATH) $(LIBSDL_LIBS) $(LDPREFIX) -L../mx -lmx -lpng  -lz $(PLATFORMZ)
+test2_LDADD = $(LIBSDL_RPATH) $(LIBSDL_LIBS) $(LDPREFIX) -L../mx -lmx -lpng  -lz $(PLATFORMZ)
+AM_CPPFLAGS = $(CFLAGPREFIX)  $(LIBSDL_CFLAGS) $(all_includes) -I../mx
 all: all-am
 
 .SUFFIXES:
@@ -657,6 +666,7 @@ uninstall-am: uninstall-binPROGRAMS
 
 .PRECIOUS: Makefile
 
+#AM_LDFLAGS = $(LIBSDL_RPATH) $(LIBSDL_LIBS) $(LDPREFIX) -L../mx $(PLATFORMZ) -lmx -lpng  -lz
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

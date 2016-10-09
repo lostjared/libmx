@@ -88,6 +88,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
+target_triplet = @target@
 bin_PROGRAMS = mxmp$(EXEEXT)
 subdir = mxmp
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -104,7 +105,9 @@ PROGRAMS = $(bin_PROGRAMS)
 am_mxmp_OBJECTS = mxmp.$(OBJEXT) mxmp_imp.$(OBJEXT) mpmut.$(OBJEXT) \
 	gamescreen.$(OBJEXT) mxmulti.$(OBJEXT) mpsplit.$(OBJEXT)
 mxmp_OBJECTS = $(am_mxmp_OBJECTS)
-mxmp_LDADD = $(LDADD)
+am__DEPENDENCIES_1 =
+mxmp_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
@@ -304,13 +307,17 @@ srcdir = @srcdir@
 stretchInclude = @stretchInclude@
 stretchLink = @stretchLink@
 sysconfdir = @sysconfdir@
+target = @target@
 target_alias = @target_alias@
+target_cpu = @target_cpu@
+target_os = @target_os@
+target_vendor = @target_vendor@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 mxmp_SOURCES = mxmp.cpp mxmp_imp.cpp mpmut.cpp gamescreen.cpp mxmulti.cpp mpsplit.cpp
-AM_CPPFLAGS = -Wall -pedantic $(CFLAGPREFIX) $(LIBSDL_CFLAGS) $(all_includes) -I../mx
-AM_LDFLAGS = $(LIBSDL_RPATH) $(LIBSDL_LIBS) $(LDPREFIX) -L../mx -lmx -lpng  -lz
+AM_CPPFLAGS = -std=c++11  $(CFLAGPREFIX) $(LIBSDL_CFLAGS) $(all_includes) -I../mx -Wno-narrowing
+mxmp_LDADD = $(LIBSDL_RPATH) $(LIBSDL_LIBS) $(LDPREFIX) -L../mx -lmx -lpng  -lz $(PLATFORMZ)
 all: all-am
 
 .SUFFIXES:

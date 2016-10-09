@@ -88,6 +88,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
+target_triplet = @target@
 bin_PROGRAMS = mx3d_math$(EXEEXT)
 subdir = mathtest
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -303,13 +304,17 @@ srcdir = @srcdir@
 stretchInclude = @stretchInclude@
 stretchLink = @stretchLink@
 sysconfdir = @sysconfdir@
+target = @target@
 target_alias = @target_alias@
+target_cpu = @target_cpu@
+target_os = @target_os@
+target_vendor = @target_vendor@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 mx3d_math_SOURCES = main.cpp
 AM_CPPFLAGS = $(CFLAGPREFIX) -Wall  $(LIBSDL_CFLAGS) $(all_includes) -I../mx
-AM_LDFLAGS = $(LIBSDL_RPATH) $(LIBSDL_LIBS) $(LDPREFIX) -L../mx -lmx -lpng  -lz
+AM_LDFLAGS = $(LIBSDL_RPATH) $(LIBSDL_LIBS) $(LDPREFIX) -L../mx -lmx -lpng  -lz $(PLATFORMZ)
 all: all-am
 
 .SUFFIXES:
