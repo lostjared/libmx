@@ -23,7 +23,7 @@ LDPREFIX=/usr/local
 fi
 
 MX_CFLAGS="-std=c++98 -I$LDPREFIX/include/mx -I$LDPREFIX/include `sdl-config --cflags`"
-MX_LDFLAGS="`sdl-config --libs ` -L$LDPREFIX/lib -lmx -lGL -lGLU"
+MX_LDFLAGS="`sdl-config --libs ` -L$LDPREFIX/lib -lmx"
 
 echo $MX_CFLAGS
 echo $MX_LDFLAGS 
