@@ -77,7 +77,7 @@ KDE_FIND_PATH(sdl-config, LIBSDL_CONFIG, [${prefix}/bin ${exec_prefix}/bin ], [
 ])
 
 if test -n "$LIBSDL_CONFIG"; then
-     LIBSDL_LIBS="-L${cprefix}/lib `$LIBSDL_CONFIG --static-libs`"
+     LIBSDL_LIBS="-L${cprefix}/lib `$LIBSDL_CONFIG --libs`"
      LIBSDL_RPATH=
      for args in $LIBSDL_LIBS; do
           case $args in
